@@ -20,7 +20,7 @@ resource "aws_route_table" "my_public_route_table" {
 resource "aws_subnet" "newsubnet" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = "10.0.0.0/25"
-  availability_zone = data.aws_availability_zones.ap-south-1a[0]
+  availability_zone = "data.aws_availability_zones.ap-south-1a[0]"
 
   tags = {
     Name = "newsubnet"
@@ -29,7 +29,7 @@ resource "aws_subnet" "newsubnet" {
 resource "aws_subnet" "newsubnet2" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = "10.0.0.128/25"
-  availability_zone = data.aws_availability_zones.ap-south-1b[1]
+  availability_zone = "data.aws_availability_zones.ap-south-1b[1]"
 
   tags = {
     Name = "newsubnet2"
